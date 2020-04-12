@@ -1,11 +1,15 @@
 # separated_development_bas
 エクセルとVBAコードを分離し、管理しやすくするツール。
 
-Import: NewBookWithModule.vbsを実行するとlibフォルダのすべてのbas, frm, clsファイルを読み込んだ新しいxlsmファイルを作成する。  
-Export: mdl_IO.basのVB_ExportModuleを実行すると指定のフォルダにモジュールをエクスポートする。
+Excel VBAのコードはxlsmファイルの形式ではバイナリ形式で認識されるため、直接Githubで管理できない。  
+今回はxlsmからコードを分離しbasファイルなどのモジュールにエクスポートすることで、Githubで管理できるようにする。  
 
+モジュールのImport: NewBookWithModule.vbsを実行するとlibフォルダのすべてのbas, frm, clsファイルを読み込んだ新しいxlsmファイルを作成する。  
+モジュールのExport: mdl_IO.basのVB_ExportModuleを実行すると指定のフォルダにモジュールをエクスポートする。
 
-libフォルダの中身  
+</br></br>
+
+(補足)libフォルダの中身  
 ・mdl_init.bas  
 上記Importを行うコード。NewBookWithModule.vbsがNewBookWithModule.vbsにおいて呼び出すモジュールであり、libフォルダを読み込んだ新しいブックが作られる。
 
