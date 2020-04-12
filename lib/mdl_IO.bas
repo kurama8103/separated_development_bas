@@ -88,15 +88,15 @@ End Function
 Public Function VB_RunFromModule(ModuleFilePath As String, FunctionName As String) As Variant
     'basファイルから関数を読込・実行
     '実行後はコードを残さない
-    Dim VBC As Object 'VBComponent
+    Dim objVBC As Object 'VBComponent
     Dim buf As Variant
     
     'Module読込
-    Set VBC = ThisWorkbook.VBProject.VBComponents.Import(ModuleFilePath)
+    Set objVBC = ThisWorkbook.VBProject.VBComponents.Import(ModuleFilePath)
     'Function実行
     buf = Application.Run(VBC.Name & "." & FunctionName)
     'Module開放
-    ThisWorkbook.VBProject.VBComponents.Remove VBC
+    ThisWorkbook.VBProject.VBComponents.Remove objVBC
     
     '関数の返り値を渡す
     VB_RunFromModule = buf
