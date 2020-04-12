@@ -86,7 +86,7 @@ Private Function CloneVBProject()  'クローンを作成して新ブックを作る
     Call mdl_init.main(FolderPath)
 End Function
 Public Function VB_RunFromModule(ModuleFilePath As String, FunctionName As String) As Variant
-    'basファイルから関数を読込・実行
+    'basファイルからなど関数を読込・実行
     '実行後はコードを残さない
     Dim objVBC As Object 'VBComponent
     Dim buf As Variant
@@ -101,7 +101,7 @@ Public Function VB_RunFromModule(ModuleFilePath As String, FunctionName As Strin
     '関数の返り値を渡す
     VB_RunFromModule = buf
 End Function
-Public Function VB_ImportModule(ModuleFilePath As String) As String 'ファイルパスからbas等をインポート
+Public Function VB_ImportModule(ModuleFilePath As String) As String 'ファイルパスからbasファイルなどをインポート
     Dim wb As Workbook
     Set wb = ThisWorkbook
     On Error GoTo ErrProc

@@ -1,7 +1,7 @@
 Attribute VB_Name = "mdl_init"
 Option Explicit
 Option Base 0
-Private Function bas2NewBook(FilePath As Variant) As String() 'basを取り込み、そのモジュール名を返す
+Private Function Module2NewBook(FilePath As Variant) As String() 'Moduleを取り込み、そのモジュール名を返す
     Dim wb As Workbook
     Dim i As Long
     Dim Extension As String
@@ -18,7 +18,7 @@ Private Function bas2NewBook(FilePath As Variant) As String() 'basを取り込み、そ
             End If
         Next i
     End With
-    bas2NewBook = buf
+    Module2NewBook = buf
     Exit Function
 End Function
 Private Function GetAllFileNames(Optional strFolderPath As String) As String()  '指定フォルダのファイルの名前をすべて返す
@@ -38,7 +38,7 @@ Private Function GetAllFileNames(Optional strFolderPath As String) As String()  
     End With
     GetAllFileNames = buf
 End Function
-Public Function main(Optional FolderPath As String) '指定フォルダのbasファイルをすべて読み込む
+Public Function main(Optional FolderPath As String) '指定フォルダのbasファイルなどをすべて読み込む
     If FolderPath = "" Then FolderPath = ThisWorkbook.Path & "\lib"
-    Call bas2NewBook(GetAllFileNames(FolderPath))
+    Call Module2NewBook(GetAllFileNames(FolderPath))
 End Function
