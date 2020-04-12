@@ -49,7 +49,7 @@ Private Function gitPullAddCommitPush()
     strCMD = "git add ."
     Debug.Print ExecuteCMD(strCMD)
     
-    strCMD = "git commit -m 'revise'"
+    strCMD = "git commit -m revise"
     Debug.Print ExecuteCMD(strCMD)
     
     strCMD = "git push origin master"
